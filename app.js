@@ -23,7 +23,10 @@ window.addEventListener("load", () => {
           const { description } = data.weather[0];
           //const location = data.name;
 
-          temperatureDegree.textContent = temp;
+          //api provides temperaturte in Kelvin that needs to be changes to Celsius
+          let celsius = temp - 273.15;
+
+          temperatureDegree.textContent = celsius;
           weatherDescription.textContent = description;
           locationName.textContent = data.name;
         });
